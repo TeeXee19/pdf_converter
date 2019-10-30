@@ -44,9 +44,10 @@
                         <form class="md-form">
                           <div class="file-field">
                             <a class="btn" >
-                              <i class="far fa-cloud-upload-alt " aria-hidden="true"></i>
-                              <input class="btn btn-default btn-lg btn-floating blue-gradient" type="file" id="file_input" onchange="file_name()">
+                              <input class="btn btn-default btn-lg btn-floating blue-gradient" type="file" id="file_input" >
+                              
                             </a>
+                            <button class="btn btn-default btn-lg btn-floating blue-gradient" type="button" id="convertBtn" onclick="file_name()">Convert</button> 
                           </div>
                           <iframe id="pdfRender" src="" hidden="true"></iframe>
                         </form>

@@ -7,6 +7,7 @@ function file_name( ){
         formData.append('File', $('#file_input')[0].files[0], name);
         formData.append('StoreFile', 'true');
         formData.append('FileName', splitname.join('.'));
+        document.getElementById('convertBtn').innerHTML = 'Loading...'
 
 
     $.ajax({
@@ -18,6 +19,12 @@ function file_name( ){
         success: function(data) {
             console.log(data.Files[0].Url);
             preview.src = data.Files[0].Url;
+             document.getElementById('convertBtn').innerHTML = 'Success'
+
+        },
+        failure: function(){
+            window.alert('ERROR CONVERTING FILE!!!');
+
         }
     })
 }
