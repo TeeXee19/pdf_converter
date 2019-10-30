@@ -10,7 +10,12 @@ function file_name( ){
         document.getElementById('convertBtn').innerHTML = 'Loading...'
         setTimeout(function() {
              document.getElementById('convertBtn').innerHTML = 'Convert'
-        }, 5000);
+        }, 3000);
+
+        if ( name.split('.').pop() == 'pdf'){
+            window.alert('REALLY!!');
+            return false; 
+        }
 
 
     $.ajax({
@@ -25,13 +30,11 @@ function file_name( ){
              document.getElementById('convertBtn').innerHTML = 'Success!!'
              setTimeout(function() {
              document.getElementById('convertBtn').innerHTML = 'Convert'
-             }, 5000);
-
-
+             }, 10000);
         },
-        failure: function(){
+        ERROR: function(data){
             window.alert('ERROR CONVERTING FILE!!!');
-
+            console.log(url);
         }
     })
 }
