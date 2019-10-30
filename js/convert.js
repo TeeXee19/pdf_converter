@@ -8,6 +8,9 @@ function file_name( ){
         formData.append('StoreFile', 'true');
         formData.append('FileName', splitname.join('.'));
         document.getElementById('convertBtn').innerHTML = 'Loading...'
+        setTimeout(function() {
+             document.getElementById('convertBtn').innerHTML = 'Convert'
+        }, 5000);
 
 
     $.ajax({
@@ -19,7 +22,11 @@ function file_name( ){
         success: function(data) {
             console.log(data.Files[0].Url);
             preview.src = data.Files[0].Url;
-             document.getElementById('convertBtn').innerHTML = 'Success'
+             document.getElementById('convertBtn').innerHTML = 'Success!!'
+             setTimeout(function() {
+             document.getElementById('convertBtn').innerHTML = 'Convert'
+             }, 5000);
+
 
         },
         failure: function(){
